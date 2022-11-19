@@ -7,12 +7,15 @@ public class VistaIngreso extends javax.swing.JFrame {
     public VistaIngreso() {
 
         initComponents();
+        setImages();
+        setLocationRelativeTo(null);
+    }
+
+    public void setImages() {
         iconUser.setIcon(new ImageIcon(getClass().getResource("/resources/user-solid.png")));
         iconEmail.setIcon(new ImageIcon(getClass().getResource("/resources/envelope-solid.png")));
         iconPassword.setIcon(new ImageIcon(getClass().getResource("/resources/lock-solid.png")));
         btn_back.setIcon(new ImageIcon(getClass().getResource("/resources/arrow-left-solid.png")));
-
-        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -91,19 +94,9 @@ public class VistaIngreso extends javax.swing.JFrame {
 
         getNombre.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         getNombre.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
-        getNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                getNombreActionPerformed(evt);
-            }
-        });
 
         getCorreo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         getCorreo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
-        getCorreo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                getCorreoActionPerformed(evt);
-            }
-        });
 
         btn_register.setBackground(new java.awt.Color(0, 0, 0));
         btn_register.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -123,11 +116,6 @@ public class VistaIngreso extends javax.swing.JFrame {
 
         getPasswordOne.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         getPasswordOne.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
-        getPasswordOne.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                getPasswordOneActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -192,18 +180,6 @@ public class VistaIngreso extends javax.swing.JFrame {
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_backActionPerformed
-
-    private void getCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getCorreoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_getCorreoActionPerformed
-
-    private void getNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_getNombreActionPerformed
-
-    private void getPasswordOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getPasswordOneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_getPasswordOneActionPerformed
 
     private void btn_registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registerActionPerformed
         // TODO add your handling code here:
