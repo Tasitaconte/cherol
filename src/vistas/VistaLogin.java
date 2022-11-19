@@ -1,11 +1,24 @@
 package vistas;
 
+import javax.swing.ImageIcon;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 public class VistaLogin extends javax.swing.JFrame {
 
     public VistaLogin() {
-        setLocationRelativeTo(null);
-        initComponents();
 
+        initComponents();
+        setLocationRelativeTo(null);
+        setImages();
+
+    }
+
+    public void setImages() {
+        //iconUser.setIcon(new ImageIcon(getClass().getResource("/resources/user-solid.png")));
+        iconEmail.setIcon(new ImageIcon(getClass().getResource("/resources/envelope-solid.png")));
+        iconPass.setIcon(new ImageIcon(getClass().getResource("/resources/lock-solid.png")));
+      //  btn_back.setIcon(new ImageIcon(getClass().getResource("/resources/arrow-left-solid.png")));
     }
 
     @SuppressWarnings("unchecked")
@@ -17,13 +30,13 @@ public class VistaLogin extends javax.swing.JFrame {
         panelIngreso = new javax.swing.JPanel();
         iconEmail = new javax.swing.JLabel();
         iconPass = new javax.swing.JLabel();
-        getText = new javax.swing.JTextField();
+        getEmail = new javax.swing.JTextField();
         btnEntrar = new javax.swing.JButton();
         getPassword = new javax.swing.JPasswordField();
+        textRegister = new java.awt.Label();
         panelBienvenida = new javax.swing.JPanel();
         labelPlataforma = new javax.swing.JLabel();
         labelBienvenido = new javax.swing.JLabel();
-        btn_back = new javax.swing.JButton();
 
         iconFesc.setMaximumSize(new java.awt.Dimension(120, 120));
         iconFesc.setMinimumSize(new java.awt.Dimension(120, 120));
@@ -37,8 +50,8 @@ public class VistaLogin extends javax.swing.JFrame {
 
         panelIngreso.setBackground(new java.awt.Color(255, 255, 255));
 
-        getText.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        getText.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
+        getEmail.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        getEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
 
         btnEntrar.setBackground(new java.awt.Color(0, 0, 0));
         btnEntrar.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
@@ -62,24 +75,36 @@ public class VistaLogin extends javax.swing.JFrame {
         getPassword.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         getPassword.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
 
+        textRegister.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        textRegister.setText("Click aquí para crear una cuenta");
+        textRegister.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                textRegisterMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelIngresoLayout = new javax.swing.GroupLayout(panelIngreso);
         panelIngreso.setLayout(panelIngresoLayout);
         panelIngresoLayout.setHorizontalGroup(
             panelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelIngresoLayout.createSequentialGroup()
-                .addGap(0, 17, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(panelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(iconPass, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(iconEmail, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(18, 18, 18)
                 .addGroup(panelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(getText)
+                    .addComponent(getEmail)
                     .addComponent(getPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(panelIngresoLayout.createSequentialGroup()
-                .addGap(104, 104, 104)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelIngresoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(107, 107, 107))
+            .addGroup(panelIngresoLayout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addComponent(textRegister, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         panelIngresoLayout.setVerticalGroup(
             panelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,14 +112,16 @@ public class VistaLogin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(iconEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(getText))
+                    .addComponent(getEmail))
                 .addGap(38, 38, 38)
                 .addGroup(panelIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(iconPass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(getPassword))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textRegister, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         btnEntrar.getAccessibleContext().setAccessibleParent(btnEntrar);
@@ -110,40 +137,27 @@ public class VistaLogin extends javax.swing.JFrame {
         labelBienvenido.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         labelBienvenido.setText("INICIA SESION");
 
-        btn_back.setBorder(null);
-        btn_back.setContentAreaFilled(false);
-        btn_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_backActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout panelBienvenidaLayout = new javax.swing.GroupLayout(panelBienvenida);
         panelBienvenida.setLayout(panelBienvenidaLayout);
         panelBienvenidaLayout.setHorizontalGroup(
             panelBienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBienvenidaLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(btn_back)
-                .addGap(70, 70, 70)
+                .addGap(19, 128, Short.MAX_VALUE)
                 .addComponent(labelPlataforma)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addGap(90, 90, 90))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBienvenidaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(labelBienvenido)
-                .addGap(140, 140, 140))
+                .addGap(128, 128, 128))
         );
         panelBienvenidaLayout.setVerticalGroup(
             panelBienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBienvenidaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelBienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_back)
-                    .addComponent(labelPlataforma))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelPlataforma)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelBienvenido)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         backgroundVista.add(panelBienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, -1));
@@ -165,12 +179,12 @@ public class VistaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        // TODO add your handling code here:
+        controladores.ControladorInit.inicioSesion();
     }//GEN-LAST:event_btnEntrarActionPerformed
 
-    private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_backActionPerformed
+    private void textRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textRegisterMouseClicked
+       controladores.ControladorInit.btnRegister();
+    }//GEN-LAST:event_textRegisterMouseClicked
 
     public static void main(String args[]) {
 
@@ -181,12 +195,19 @@ public class VistaLogin extends javax.swing.JFrame {
         });
     }
 
+    public JTextField getGetEmail() {
+        return getEmail;
+    }
+
+    public JPasswordField getGetPassword() {
+        return getPassword;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel backgroundVista;
     private javax.swing.JButton btnEntrar;
-    private javax.swing.JButton btn_back;
+    private javax.swing.JTextField getEmail;
     private javax.swing.JPasswordField getPassword;
-    private javax.swing.JTextField getText;
     private javax.swing.JLabel iconEmail;
     private javax.swing.JLabel iconFesc;
     private javax.swing.JLabel iconPass;
@@ -194,5 +215,6 @@ public class VistaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel labelPlataforma;
     private javax.swing.JPanel panelBienvenida;
     private javax.swing.JPanel panelIngreso;
+    private java.awt.Label textRegister;
     // End of variables declaration//GEN-END:variables
 }

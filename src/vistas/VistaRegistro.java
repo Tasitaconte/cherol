@@ -1,10 +1,12 @@
 package vistas;
 
 import javax.swing.ImageIcon;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
-public class VistaIngreso extends javax.swing.JFrame {
+public class VistaRegistro extends javax.swing.JFrame {
 
-    public VistaIngreso() {
+    public VistaRegistro() {
 
         initComponents();
         setImages();
@@ -66,15 +68,16 @@ public class VistaIngreso extends javax.swing.JFrame {
         panelBienvenidaLayout.setHorizontalGroup(
             panelBienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBienvenidaLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(btn_back)
-                .addGap(98, 98, 98)
-                .addComponent(labelPlataforma)
-                .addContainerGap(102, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBienvenidaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(labelBienvenido)
-                .addGap(142, 142, 142))
+                .addContainerGap(68, Short.MAX_VALUE)
+                .addGroup(panelBienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBienvenidaLayout.createSequentialGroup()
+                        .addComponent(btn_back)
+                        .addGap(47, 47, 47)
+                        .addComponent(labelPlataforma)
+                        .addGap(103, 103, 103))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBienvenidaLayout.createSequentialGroup()
+                        .addComponent(labelBienvenido)
+                        .addGap(144, 144, 144))))
         );
         panelBienvenidaLayout.setVerticalGroup(
             panelBienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,20 +181,46 @@ public class VistaIngreso extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
-        // TODO add your handling code here:
+     controladores.ControladorRegister.btnBack();
     }//GEN-LAST:event_btn_backActionPerformed
 
     private void btn_registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registerActionPerformed
-        // TODO add your handling code here:
+       controladores.ControladorRegister.btnRegister();
     }//GEN-LAST:event_btn_registerActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaIngreso().setVisible(true);
+                new VistaRegistro().setVisible(true);
             }
         });
     }
+
+    public JTextField getGetCorreo() {
+        return getCorreo;
+    }
+
+    public JTextField getGetNombre() {
+        return getNombre;
+    }
+
+    public JPasswordField getGetPasswordOne() {
+        return getPasswordOne;
+    }
+
+    public void setGetCorreo(JTextField getCorreo) {
+        this.getCorreo = getCorreo;
+    }
+
+    public void setGetNombre(JTextField getNombre) {
+        this.getNombre = getNombre;
+    }
+
+    public void setGetPasswordOne(JPasswordField getPasswordOne) {
+        this.getPasswordOne = getPasswordOne;
+    }
+
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel backgroundVistaIngreso;
