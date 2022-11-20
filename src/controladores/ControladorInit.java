@@ -4,6 +4,7 @@ import Dao.DaoUsuario;
 import Dao.IDaoUsuario;
 import LibPersonals.encoder;
 import Modelos.UserModel;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import vistas.VistaLogin;
 
@@ -36,13 +37,17 @@ public class ControladorInit {
                 case 1:
                     if (validacion(email, pass, rol)) {
                         hidden();
-                        ControladorEncargado.visible();
+                        String name = nameUser(email, pass, rol);
+                        clear();
+                        ControladorEncargado.visible(name);
                     }
                     break;
                 case 2:
                     if (validacion(email, pass, rol)) {
                         hidden();
-                        ControladorUsuario.visible();
+                        String name = nameUser(email, pass, rol);
+                        clear();
+                        ControladorUsuario.visible(name);
                     }
                     break;
                 default:
@@ -55,6 +60,19 @@ public class ControladorInit {
         UserModel u = new UserModel(null, x, y, z);
         IDaoUsuario iDaoUsuario = new DaoUsuario();
         return iDaoUsuario.Dingreso(u);
+    }
+
+    public static String nameUser(String x, String y, int z) {
+        IDaoUsuario iDaoUsuario = new DaoUsuario();
+        UserModel u = new UserModel(null, x, y, z);
+        ArrayList<UserModel> nameUser = iDaoUsuario.nameUser(u);
+        return nameUser.get(0).getName_user();
+    }
+
+    public static void clear() {
+        v.getGetEmail().setText("");
+        v.getGetPassword().setText("");
+        v.getGetRol().setSelectedIndex(0);
     }
 
 }

@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import Env.env;
 import Modelos.UserModel;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class DaoUsuario extends conexionSQL implements IDaoUsuario {
 
@@ -46,6 +47,8 @@ public class DaoUsuario extends conexionSQL implements IDaoUsuario {
             ResultSet resultSet = ps.executeQuery();
 
             if (resultSet.next()) {
+                UserModel u = new UserModel();
+                u.setName_user(resultSet.getString(env.NAME_USER));
                 return true; // en tal caso de que los datos sean correctos retornara un datos boolean
             }
         } catch (SQLException e) {
@@ -58,6 +61,33 @@ public class DaoUsuario extends conexionSQL implements IDaoUsuario {
             }
         }
         return false; // si no hay datos correcto retorna un dato boolean 
+    }
+
+    @Override
+    public ArrayList<UserModel> nameUser(UserModel usuario) {
+        ArrayList<UserModel> arrayListDat = new ArrayList<>();
+        String sql = "SELECT *  FROM " + env.T_USER + " WHERE " + env.EMAIL_USER + "='"
+                + usuario.getEmail_user()
+                + "' and " + env.PASS_USER + "='" + usuario.getPass_user() + "'" + "and " + env.ID_ROL + "='" + usuario.getId_rol() + "'";
+        try {
+            PreparedStatement ps = getConnection().prepareStatement(sql);
+            ResultSet resultSet = ps.executeQuery();
+            if (resultSet.next()) {
+                UserModel u = new UserModel();
+                u.setName_user(resultSet.getString(env.NAME_USER));
+                arrayListDat.add(u);
+            }
+            return arrayListDat;
+        } catch (SQLException e) {
+            System.out.println("Error al leer los datos " + e.getMessage());
+        } finally {
+            try {
+                getConnection().close();
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar la conexion " + e);
+            }
+        }
+        return arrayListDat; // si no hay datos correcto retorna un dato boolean 
     }
 
 }

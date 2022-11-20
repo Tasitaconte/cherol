@@ -28,12 +28,6 @@ public class ControladorRegister {
         ControladorInit.visible();
     }
 
-    public static void clear() {
-        v.getGetCorreo().setText("");
-        v.getGetNombre().setText("");
-        v.getGetPasswordOne().setText("");
-    }
-
     public static void btnRegister() {
         String usuario = v.getGetNombre().getText().toLowerCase();
         String email = v.getGetCorreo().getText().toLowerCase();
@@ -44,7 +38,7 @@ public class ControladorRegister {
         } else {
             if (eval.validacionEmail(email) && eval.validacionName(usuario)) {
                 IDaoUsuario iDaoUsuario = new DaoUsuario();
-                UserModel u = new UserModel(usuario, email, pass,0);
+                UserModel u = new UserModel(usuario, email, pass, 0);
                 if (iDaoUsuario.createUser(u)) {
                     JOptionPane.showMessageDialog(v, "Registrado");
                     clear();
@@ -54,4 +48,11 @@ public class ControladorRegister {
             }
         }
     }
+
+    public static void clear() {
+        v.getGetCorreo().setText("");
+        v.getGetNombre().setText("");
+        v.getGetPasswordOne().setText("");
+    }
+
 }
