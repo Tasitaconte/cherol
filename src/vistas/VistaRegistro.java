@@ -7,10 +7,10 @@ import javax.swing.JTextField;
 public class VistaRegistro extends javax.swing.JFrame {
 
     public VistaRegistro() {
-
         initComponents();
-        setImages();
         setLocationRelativeTo(null);
+        setTitle("Registro");
+        setImages();
     }
 
     public void setImages() {
@@ -105,6 +105,7 @@ public class VistaRegistro extends javax.swing.JFrame {
         btn_register.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btn_register.setForeground(new java.awt.Color(255, 255, 255));
         btn_register.setText("REGISTRAR");
+        btn_register.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_register.setDefaultCapable(false);
         btn_register.setFocusPainted(false);
         btn_register.setFocusable(false);
@@ -127,20 +128,19 @@ public class VistaRegistro extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(iconUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(iconPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                            .addComponent(iconEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(getCorreo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                            .addComponent(getNombre, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(getPasswordOne))
-                        .addGap(26, 26, 26))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_register)
-                        .addGap(123, 123, 123))))
+                    .addComponent(iconUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(iconPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(iconEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(getCorreo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                    .addComponent(getNombre, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(getPasswordOne))
+                .addGap(26, 26, 26))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(112, 112, 112)
+                .addComponent(btn_register)
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,20 +157,18 @@ public class VistaRegistro extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(getPasswordOne, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(iconPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(btn_register, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                .addContainerGap())
         );
 
-        backgroundVistaIngreso.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 380, 290));
+        backgroundVistaIngreso.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 330, 250));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(backgroundVistaIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(backgroundVistaIngreso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,11 +179,11 @@ public class VistaRegistro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
-     controladores.ControladorRegister.btnBack();
+        controladores.ControladorRegister.btnBack();
     }//GEN-LAST:event_btn_backActionPerformed
 
     private void btn_registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registerActionPerformed
-       controladores.ControladorRegister.btnRegister();
+        controladores.ControladorRegister.btnRegister();
     }//GEN-LAST:event_btn_registerActionPerformed
 
     public static void main(String args[]) {
@@ -219,9 +217,6 @@ public class VistaRegistro extends javax.swing.JFrame {
     public void setGetPasswordOne(JPasswordField getPasswordOne) {
         this.getPasswordOne = getPasswordOne;
     }
-
-   
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel backgroundVistaIngreso;
     private javax.swing.JButton btn_back;

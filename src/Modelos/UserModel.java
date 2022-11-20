@@ -2,17 +2,25 @@ package Modelos;
 
 public class UserModel {
 
-    private int id_user;
+    private int id_user, id_rol;
     private String name_user, email_user, pass_user;
 
     public UserModel() {
     }
 
-    public UserModel(String name_user, String email_user, String pass_user) {
-
+    public UserModel(String name_user, String email_user, String pass_user, int id_rol) {
         this.name_user = name_user;
         this.email_user = email_user;
         this.pass_user = pass_user;
+        this.id_rol = id_rol;
+    }
+
+    public int getId_rol() {
+        return id_rol;
+    }
+
+    public void setId_rol(int id_rol) {
+        this.id_rol = id_rol;
     }
 
     public int getId_user() {

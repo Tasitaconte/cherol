@@ -20,7 +20,7 @@ public class ControladorRegister {
     }
 
     public static void hidden() {
-        v.setVisible(false);
+        v.dispose();
     }
 
     public static void btnBack() {
@@ -44,7 +44,7 @@ public class ControladorRegister {
         } else {
             if (eval.validacionEmail(email) && eval.validacionName(usuario)) {
                 IDaoUsuario iDaoUsuario = new DaoUsuario();
-                UserModel u = new UserModel(usuario, email, pass);
+                UserModel u = new UserModel(usuario, email, pass,0);
                 if (iDaoUsuario.createUser(u)) {
                     JOptionPane.showMessageDialog(v, "Registrado");
                     clear();

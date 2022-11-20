@@ -5,9 +5,11 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import Env.env;
 import Modelos.UserModel;
+import java.sql.ResultSet;
 
 public class DaoUsuario extends conexionSQL implements IDaoUsuario {
 
+    @Override
     public boolean createUser(UserModel usuario) {
         String sql = "INSERT INTO " + env.T_USER + "("
                 + env.NAME_USER + "," + env.EMAIL_USER + "," + env.PASS_USER + "," + env.ID_ROL + ") VALUES (?, ?, ?,?)";
@@ -30,6 +32,32 @@ public class DaoUsuario extends conexionSQL implements IDaoUsuario {
             }
         }
         return false;
+    }
+
+    @Override
+    public boolean Dingreso(UserModel usuario) {
+        //query de la db
+        String sql = "SELECT *  FROM " + env.T_USER + " WHERE " + env.EMAIL_USER + "='"
+                + usuario.getEmail_user()
+                + "' and " + env.PASS_USER + "='" + usuario.getPass_user() + "'" + "and " + env.ID_ROL + "='" + usuario.getId_rol() + "'";
+        System.err.println(sql);
+        try {
+            PreparedStatement ps = getConnection().prepareStatement(sql);
+            ResultSet resultSet = ps.executeQuery();
+
+            if (resultSet.next()) {
+                return true; // en tal caso de que los datos sean correctos retornara un datos boolean
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al leer los datos " + e.getMessage());
+        } finally {
+            try {
+                getConnection().close();
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar la conexion " + e);
+            }
+        }
+        return false; // si no hay datos correcto retorna un dato boolean 
     }
 
 }
