@@ -7,7 +7,7 @@ public class ControladorUsuario {
     static vistaUsuarios vUsuarios = new vistaUsuarios();
 
     public static void visible(String name) {
-        vUsuarios.getNameUser().setText("Bienvenid@ "+name.toUpperCase());
+       vUsuarios.getNameUser().setText(name.toUpperCase());
         vUsuarios.setVisible(true);
     }
     
