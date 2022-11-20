@@ -1,5 +1,6 @@
 package vistas;
 
+import Env.DatosConstantes;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JPasswordField;
@@ -25,7 +26,7 @@ public class VistaLogin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(vistaEncargado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
     }
 
@@ -38,9 +39,8 @@ public class VistaLogin extends javax.swing.JFrame {
 
     public void setRoles() {
         getRol.removeAllItems();
-        String[] roles = {"Administrador", "Usuario"};
         getRol.addItem("Seleccione Rol");
-        for (String role : roles) {
+        for (String role : DatosConstantes.ROLES) {
             getRol.addItem(role);
         }
     }
