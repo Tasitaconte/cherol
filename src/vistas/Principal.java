@@ -49,7 +49,7 @@ public class Principal extends javax.swing.JPanel {
         jLabel2.setText("de la actividad.");
         jPanel1.add(jLabel2);
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 470, 100));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 470, 100));
     }// </editor-fold>//GEN-END:initComponents
 
 

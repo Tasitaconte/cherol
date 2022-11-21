@@ -38,6 +38,9 @@ public class vistaEncargado extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         app_name = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        btn_maketareas = new javax.swing.JPanel();
+        iconTareas1 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
         fecha = new javax.swing.JLabel();
         NameUser = new javax.swing.JLabel();
@@ -86,7 +89,7 @@ public class vistaEncargado extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Principal");
+        jLabel5.setText("HOME");
         btn_prin.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 30));
 
         Menu.add(btn_prin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 270, 50));
@@ -112,10 +115,10 @@ public class vistaEncargado extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Salir");
+        jLabel12.setText("SALIR");
         btn_logout.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 30));
 
-        Menu.add(btn_logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, -1, -1));
+        Menu.add(btn_logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, -1, -1));
 
         btn_tareas.setBackground(new java.awt.Color(18, 90, 173));
         btn_tareas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -141,7 +144,7 @@ public class vistaEncargado extends javax.swing.JFrame {
         jLabel14.setText("TAREAS");
         btn_tareas.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 30));
 
-        Menu.add(btn_tareas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, -1, -1));
+        Menu.add(btn_tareas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, -1, -1));
 
         app_name.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         app_name.setForeground(new java.awt.Color(255, 255, 255));
@@ -150,6 +153,32 @@ public class vistaEncargado extends javax.swing.JFrame {
 
         jSeparator1.setPreferredSize(new java.awt.Dimension(50, 5));
         Menu.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 190, 20));
+
+        btn_maketareas.setBackground(new java.awt.Color(18, 90, 173));
+        btn_maketareas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_maketareas.setPreferredSize(new java.awt.Dimension(270, 51));
+        btn_maketareas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_maketareasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_maketareasMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_maketareasMousePressed(evt);
+            }
+        });
+        btn_maketareas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        iconTareas1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_maketareas.add(iconTareas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 30));
+
+        jLabel15.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("CREAR TAREA");
+        btn_maketareas.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 30));
+
+        Menu.add(btn_maketareas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 270, -1));
 
         jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 640));
 
@@ -160,6 +189,7 @@ public class vistaEncargado extends javax.swing.JFrame {
         fecha.setText("Hoy es Sábado 28 de Abril de 2018");
 
         NameUser.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        NameUser.setForeground(new java.awt.Color(255, 255, 255));
         NameUser.setText("YULIANA  ESTEFANIA CASTELLANO ANAYA");
 
         javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
@@ -217,7 +247,8 @@ public class vistaEncargado extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
- public void setDate() {
+
+    public void setDate() {
         LocalDate now = LocalDate.now();
         int year = now.getYear();
         int dia = now.getDayOfMonth();
@@ -228,7 +259,8 @@ public class vistaEncargado extends javax.swing.JFrame {
     public void setIcon() {
         iconHome.setIcon(new ImageIcon(getClass().getResource("/resources/home.png")));
         iconExit.setIcon(new ImageIcon(getClass().getResource("/resources/exit.png")));
-        iconTareas.setIcon(new ImageIcon(getClass().getResource("/resources/task.png")));
+        iconTareas1.setIcon(new ImageIcon(getClass().getResource("/resources/lista-de-tareas (1).png")));
+        iconTareas.setIcon(new ImageIcon(getClass().getResource("/resources/portapapeles.png")));
     }
 
     public void setPrincipal() {
@@ -258,6 +290,7 @@ public class vistaEncargado extends javax.swing.JFrame {
         setColor(btn_prin);
         resetColor(btn_tareas);
         resetColor(btn_logout);
+        resetColor(btn_maketareas);
         //    Abrir sección
         Principal p1 = new Principal();
         p1.setSize(530, 470);
@@ -279,7 +312,8 @@ public class vistaEncargado extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_logoutMouseEntered
 
     private void btn_logoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_logoutMouseExited
-        if (btn_tareas.getBackground().getRGB() != -15574355 || btn_prin.getBackground().getRGB() != -15574355)
+        if (btn_tareas.getBackground().getRGB() != -15574355 || btn_prin.getBackground().getRGB() != -15574355
+                || btn_maketareas.getBackground().getRGB() != -15574355)
             resetColor(btn_logout);
     }//GEN-LAST:event_btn_logoutMouseExited
 
@@ -289,7 +323,8 @@ public class vistaEncargado extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_tareasMouseEntered
 
     private void btn_tareasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_tareasMouseExited
-        if (btn_prin.getBackground().getRGB() != -15574355 || btn_logout.getBackground().getRGB() != -15574355)
+        if (btn_prin.getBackground().getRGB() != -15574355 || btn_logout.getBackground().getRGB() != -15574355
+                || btn_maketareas.getBackground().getRGB() != -15574355)
             resetColor(btn_tareas);
     }//GEN-LAST:event_btn_tareasMouseExited
 
@@ -297,6 +332,7 @@ public class vistaEncargado extends javax.swing.JFrame {
         resetColor(btn_prin);
         setColor(btn_tareas);
         resetColor(btn_logout);
+        resetColor(btn_maketareas);
         VerTareas p1 = new VerTareas();
         p1.setSize(530, 470);
         p1.setLocation(0, 0);
@@ -305,6 +341,34 @@ public class vistaEncargado extends javax.swing.JFrame {
         content1.revalidate();
         content1.repaint();
     }//GEN-LAST:event_btn_tareasMousePressed
+
+    private void btn_maketareasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_maketareasMouseEntered
+        if (btn_maketareas.getBackground().getRGB() == -15574355)
+            setColor(btn_maketareas);
+    }//GEN-LAST:event_btn_maketareasMouseEntered
+
+    private void btn_maketareasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_maketareasMouseExited
+        if (btn_prin.getBackground().getRGB() != -15574355 || btn_logout.getBackground().getRGB() != -15574355
+                || btn_tareas.getBackground().getRGB() != -15574355)
+            resetColor(btn_maketareas);
+    }//GEN-LAST:event_btn_maketareasMouseExited
+
+    private void btn_maketareasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_maketareasMousePressed
+        resetColor(btn_tareas);
+        setColor(btn_maketareas);
+        resetColor(btn_logout);
+        resetColor(btn_prin);
+
+        MakeTareas p = new MakeTareas();
+        p.setSize(530, 470);
+        p.setLocation(0, 0);
+        content1.removeAll();
+        content1.add(p, BorderLayout.CENTER);
+        content1.revalidate();
+        content1.repaint();
+
+    }//GEN-LAST:event_btn_maketareasMousePressed
+
     void setColor(JPanel panel) {
         panel.setBackground(new Color(21, 101, 192));
     }
@@ -314,7 +378,6 @@ public class vistaEncargado extends javax.swing.JFrame {
     }
 
     public static void main(String args[]) {
-
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new vistaEncargado().setVisible(true);
@@ -333,6 +396,7 @@ public class vistaEncargado extends javax.swing.JFrame {
     private javax.swing.JLabel NameUser;
     private javax.swing.JLabel app_name;
     private javax.swing.JPanel btn_logout;
+    private javax.swing.JPanel btn_maketareas;
     private javax.swing.JPanel btn_prin;
     private javax.swing.JPanel btn_tareas;
     public static javax.swing.JPanel content;
@@ -341,8 +405,10 @@ public class vistaEncargado extends javax.swing.JFrame {
     private javax.swing.JLabel iconExit;
     private javax.swing.JLabel iconHome;
     private javax.swing.JLabel iconTareas;
+    private javax.swing.JLabel iconTareas1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
