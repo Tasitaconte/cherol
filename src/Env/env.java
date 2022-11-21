@@ -18,7 +18,7 @@ public class env {
     //TABLA TAREA
     public static final String T_TAREA = "tareas";
     public static final String ID_TAREA = "id_tarea";
-    public static final String NAME_TAREA = "id_tarea";
+    public static final String NAME_TAREA = "name_tarea";
     public static final String TAREA = "tarea";
 
 }
