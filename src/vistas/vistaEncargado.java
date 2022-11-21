@@ -3,6 +3,7 @@ package vistas;
 import Env.DatosConstantes;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.sql.Date;
 import java.time.LocalDate;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -17,7 +18,6 @@ public class vistaEncargado extends javax.swing.JFrame {
         setIcon();
         setPrincipal();
         setDate();
-
     }
 
     @SuppressWarnings("unchecked")
