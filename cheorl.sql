@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2022 a las 02:08:24
+-- Tiempo de generación: 21-11-2022 a las 22:43:50
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 7.4.30
 
@@ -53,6 +53,15 @@ CREATE TABLE `tareas` (
   `tarea` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `tareas`
+--
+
+INSERT INTO `tareas` (`id_tarea`, `id_user`, `name_tarea`, `tarea`) VALUES
+(1, 1, 'Tarea', 'ejemplo'),
+(2, 1, 'sadsa', 'sdasddas'),
+(3, 2, 'Tarea', 'sdafdafd');
+
 -- --------------------------------------------------------
 
 --
@@ -72,8 +81,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `name_user`, `email_user`, `pass_user`, `id_rol`) VALUES
-(1, 'dayana mitchell florez delgado', 'est_dm_florez@fesc.edu.co', 'Cmugsfubs0E=', 1),
-(4, 'yuliana castellano', 'est_ye_castellano@fesc.edu.co', 'Cmugsfubs0E=', 2);
+(1, 'Dayana Florez', 'est_dm_florez@fesc.edu.co', 'Cmugsfubs0E=', 1),
+(2, 'yuliana castellano', 'est_ye_castellano@fesc.edu.co', 'Cmugsfubs0E=', 2);
 
 --
 -- Índices para tablas volcadas
@@ -114,13 +123,13 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `tareas`
 --
 ALTER TABLE `tareas`
-  MODIFY `id_tarea` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_tarea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
@@ -130,13 +139,13 @@ ALTER TABLE `user`
 -- Filtros para la tabla `tareas`
 --
 ALTER TABLE `tareas`
-  ADD CONSTRAINT `tareas_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `tareas_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `user`
 --
 ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `rol` (`id_rol`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `rol` (`id_rol`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
