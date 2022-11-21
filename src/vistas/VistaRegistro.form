@@ -141,7 +141,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="20" y="110" width="350" height="250"/>
+              <AbsoluteConstraints x="0" y="110" width="380" height="250"/>
             </Constraint>
           </Constraints>
 
@@ -156,10 +156,10 @@
                           <Component id="iconEmail" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="getNombre" pref="300" max="32767" attributes="0"/>
-                          <Component id="getCorreo" alignment="0" max="32767" attributes="0"/>
-                          <Component id="getPasswordOne" alignment="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="getNombre" pref="330" max="32767" attributes="0"/>
+                          <Component id="getCorreo" alignment="1" max="32767" attributes="0"/>
+                          <Component id="getPasswordOne" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>

@@ -14,7 +14,7 @@ public class DaoTarea extends conexionSQL implements IDaoTarea {
                 + env.ID_USER+ "," + env.NAME_TAREA + "," + env.TAREA + ") VALUES (?, ?, ?)";
         try {
             PreparedStatement ps = getConnection().prepareStatement(sql);
-            ps.setInt(1, 1);
+            ps.setInt(1, tarea.getId_usuario());
             ps.setString(2, tarea.getName_tarea());
             ps.setString(3, tarea.getTarea());
             ps.executeUpdate();

@@ -136,7 +136,7 @@ public class MakeTareas extends javax.swing.JPanel {
 
     private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
         ControladorTarea ct = new ControladorTarea();
-        int id_persona = getPerson.getSelectedIndex()+1;
+        int id_persona = getPerson.getSelectedIndex();
         String nametarea = getTarea.getText();
         String texto = getTextTarea.getText();
         if (!nametarea.equals("") || !texto.equals("")) {

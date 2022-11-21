@@ -40,6 +40,8 @@ public class ControladorInit {
                         String name = nameUser(email, pass, rol);
                         clear();
                         ControladorEncargado.visible(name);
+                    } else {
+                        JOptionPane.showMessageDialog(v, "Datos Invalidos");
                     }
                     break;
                 case 2:
@@ -48,6 +50,8 @@ public class ControladorInit {
                         String name = nameUser(email, pass, rol);
                         clear();
                         ControladorUsuario.visible(name);
+                    } else {
+                        JOptionPane.showMessageDialog(v, "Datos Invalidos");
                     }
                     break;
                 default:
