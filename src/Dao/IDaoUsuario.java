@@ -10,4 +10,6 @@ public interface IDaoUsuario {
     public boolean Dingreso(UserModel usuario);
 
     public ArrayList<UserModel> nameUser(UserModel usuario);
+
+    public ArrayList<UserModel> getUser();
 }

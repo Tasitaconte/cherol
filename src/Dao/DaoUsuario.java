@@ -89,5 +89,30 @@ public class DaoUsuario extends conexionSQL implements IDaoUsuario {
         }
         return arrayListDat; // si no hay datos correcto retorna un dato boolean 
     }
+    
+    @Override
+    public ArrayList<UserModel> getUser(){
+        ArrayList<UserModel> arrayListDat = new ArrayList<>();
+        String sql = "SELECT *  FROM " + env.T_USER + " WHERE " + env.ID_ROL + "='2'";
+        try {
+            PreparedStatement ps = getConnection().prepareStatement(sql);
+            ResultSet resultSet = ps.executeQuery();
+            while(resultSet.next()) {
+                UserModel u = new UserModel();
+                u.setName_user(resultSet.getString(env.NAME_USER));
+                arrayListDat.add(u);
+            }
+            return arrayListDat;
+        } catch (SQLException e) {
+            System.out.println("Error al leer los datos " + e.getMessage());
+        } finally {
+            try {
+                getConnection().close();
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar la conexion " + e);
+            }
+        }
+        return arrayListDat; // si no hay datos correcto retorna un dato boolean 
+    }
 
 }
