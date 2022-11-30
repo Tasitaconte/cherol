@@ -13,7 +13,6 @@ public class VerTareas extends javax.swing.JPanel {
         body = new javax.swing.JPanel();
         Title = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(750, 430));
@@ -31,10 +30,6 @@ public class VerTareas extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 530, 330));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -42,6 +37,5 @@ public class VerTareas extends javax.swing.JPanel {
     private javax.swing.JLabel Title;
     private javax.swing.JPanel body;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
